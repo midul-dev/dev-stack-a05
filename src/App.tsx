@@ -1,3 +1,4 @@
+import Hero from "./components/Hero";
 import Nav from "./components/Nav";
 import type { IStacks } from "./Types/types";
 
@@ -15,6 +16,7 @@ function App() {
     <>
       
 <Nav />
+<Hero />
       
     </>
   )
