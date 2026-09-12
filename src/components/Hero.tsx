@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <div className="container mx-auto grid grid-cols-2 items-center ">
       <div>
-        <div className="w-[500px] pb-8">
-          <h1 className="text-5xl pb-5 font-bold">
+        <div className="w-[500px] pb-14">
+          <h1 className="text-5xl pb-8 font-bold">
             Build Your Ideal
             <span className="inline-block bg-gradient-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
               Development Stack

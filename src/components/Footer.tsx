@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto ">
         <div className="grid items-start gap-2 py-10 grid-cols-5">
           <div className="col-span-2">
-            <img src={FooterLogo} alt="DevStack" className="pb-2 w-30" />
+            <img src={FooterLogo} alt="DevStack" className="pb-5 w-30" />
             <p className="w-[450px] pb-5 text-sm text-[#64748B]">
               Curated tools, technologies, and resources for developers building
               modern software.

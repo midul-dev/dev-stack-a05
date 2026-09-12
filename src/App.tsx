@@ -1,3 +1,4 @@
+import Explore from "./components/Explore";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
@@ -18,7 +19,7 @@ function App() {
       
 <Nav />
 <Hero />
-
+<Explore />
 <Footer />
       
     </>
