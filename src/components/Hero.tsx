@@ -2,32 +2,43 @@ import Banner from "../assets/banner-stack.png";
 
 const Hero = () => {
   return (
-    <div className="container mx-auto grid grid-cols-2 items-center ">
-      <div>
-        <div className="w-125 pb-14">
-          <h1 className="text-5xl pb-8 font-bold">
-            Build Your Ideal
+    <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-4 py-10 sm:py-14 md:grid-cols-2 md:gap-8 md:px-6 lg:py-16">
+      {/* Hero Content */}
+      <div className="text-center md:text-left">
+        <div className="mx-auto w-full max-w-2xl pb-8 md:mx-0 md:w-125 md:pb-14">
+          <h1 className="pb-6 text-4xl font-bold leading-tight sm:text-5xl md:pb-8">
+            Build Your Ideal{" "}
             <span className="inline-block bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
               Development Stack
             </span>
           </h1>
-          <p>
+
+          <p className="text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
             Explore frontend, backend, database, and tooling options, compare
             them side by side, and put together the stack that fits your next
             project.
           </p>
         </div>
-        <div className="flex gap-3">
-          <button className="btn text-white bg-linear-to-r from-[#F97316] to-[#EC4899] ">
+
+        {/* Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+          <button className="btn bg-linear-to-r from-[#F97316] to-[#EC4899] text-white">
             Explore Technologies
           </button>
-          <button className="btn text-[#374151] border-2 px-12 ">
+
+          <button className="btn border-2 px-12 text-[#374151]">
             Learn More
           </button>
         </div>
       </div>
-      <div className="grid justify-center">
-        <img src={Banner} alt="" />
+
+      {/* Hero Image */}
+      <div className="flex justify-center">
+        <img
+          src={Banner}
+          alt=""
+          className="w-full max-w-sm object-contain sm:max-w-md md:max-w-lg"
+        />
       </div>
     </div>
   );
