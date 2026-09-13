@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <nav className=''>
         <div className='container mx-auto flex justify-between items-center py-4'>
-            <img src={Logo} alt="DevStack" className='w-[130px]' />
+            <img src={Logo} alt="DevStack" className='w-32.5' />
             <ul className='flex gap-5'>
                 <li><a href="#"></a>Home</li>
                 <li><a href="#"></a>Technologies</li>
