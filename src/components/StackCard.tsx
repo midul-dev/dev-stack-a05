@@ -7,7 +7,7 @@ indx: number
 selectedStack: IStacks[]
 setSelectedstack: React.Dispatch<React.SetStateAction<IStacks[]>>
 };
-const StackCard = ({ stack, indx, selectedStack, setSelectedstack }: IStackProps) => {
+const StackCard = ({ stack, selectedStack, setSelectedstack }: IStackProps) => {
     const [isSelected, setIsSelected]= useState(false)
 
 const handleSelected = (selected: boolean) => {
@@ -17,8 +17,8 @@ setSelectedstack([...selectedStack, stack])
 
     return (
         <div
-            key={indx}
-            className="group rounded-3xl border border-slate-200/60 bg-white/70 p-6 shadow-md backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:border-pink-400 hover:shadow-2xl"
+            key={stack.id}
+            className={isSelected?`group rounded-3xl border border-pink-600  bg-white/70 p-6 shadow-md backdrop-blur-lg transition-all duration-300 hover:-translate-y-2  hover:border-pink-400 hover:shadow-2xl`: `group rounded-3xl border border-slate-200/60 bg-white/70 p-6 shadow-md backdrop-blur-lg transition-all duration-300 hover:-translate-y-2  hover:border-pink-400 hover:shadow-2xl `}
           >
             {/* Logo + Rating */}
             <div className="mb-5 flex items-center justify-between">
@@ -78,7 +78,7 @@ setSelectedstack([...selectedStack, stack])
                 </div>
                 <button
                   onClick={() => handleSelected(true)}
-                  className="btn btn-neutral" disabled={isSelected}
+                  className={isSelected?`btn rounded-2xl text-white  bg-pink-500`:`btn rounded-2xl  btn-neutral`} disabled={isSelected}
                 >
                   {isSelected === true ? "Added" : "Add to Stack"}
                 </button>
