@@ -11,7 +11,7 @@ const Explore = ({ fullStacks }: IStackProps) => {
   const stacks = use(fullStacks);
 
   return (
-    <div className="container mx-auto px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+    <div id="explore" className="container mx-auto px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
       {/* Section Heading */}
       <div className="pb-8 text-center md:pb-10 md:text-left">
         <h1 className="pb-2 text-2xl font-bold sm:text-3xl">

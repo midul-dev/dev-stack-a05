@@ -1,6 +1,11 @@
 import Banner from "../assets/banner-stack.png";
 
 const Hero = () => {
+  const handleExplore = () => {
+    const exploreSection = document.getElementById("explore");
+    exploreSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-4 py-10 sm:py-14 md:grid-cols-2 md:gap-8 md:px-6 lg:py-16">
       {/* Hero Content */}
@@ -22,7 +27,10 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-          <button className="btn bg-linear-to-r from-[#F97316] to-[#EC4899] text-white">
+          <button
+            onClick={handleExplore}
+            className="btn bg-linear-to-r from-[#F97316] to-[#EC4899] text-white"
+          >
             Explore Technologies
           </button>
 
