@@ -7,11 +7,11 @@ const Hero = () => {
   };
 
   return (
-    <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-4 py-10 sm:py-14 md:grid-cols-2 md:gap-8 md:px-6 lg:py-16">
+    <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-4 py-10 sm:py-14 md:grid-cols-2 md:gap-6 md:px-8 md:py-16 lg:gap-8 lg:px-6 lg:py-16">
       {/* Hero Content */}
       <div className="text-center md:text-left">
-        <div className="mx-auto w-full max-w-2xl pb-8 md:mx-0 md:w-125 md:pb-14">
-          <h1 className="pb-6 text-4xl font-bold leading-tight sm:text-5xl md:pb-8">
+        <div className="mx-auto w-full max-w-2xl pb-8 md:mx-0 md:max-w-none md:pb-10 lg:w-125 lg:pb-14">
+          <h1 className="pb-6 text-4xl font-bold leading-tight sm:text-5xl md:text-[2.6rem] md:leading-tight lg:text-5xl lg:pb-8">
             Build Your Ideal{" "}
             <span className="inline-block bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
               Development Stack
@@ -41,11 +41,11 @@ const Hero = () => {
       </div>
 
       {/* Hero Image */}
-      <div className="flex justify-center">
+      <div className="flex justify-center md:justify-end lg:justify-center">
         <img
           src={Banner}
           alt=""
-          className="w-full max-w-sm object-contain sm:max-w-md md:max-w-lg"
+          className="w-full max-w-sm object-contain sm:max-w-md md:max-w-85 lg:max-w-lg"
         />
       </div>
     </div>
