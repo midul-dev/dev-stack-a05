@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Explore from "./components/Explore";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -9,7 +10,7 @@ const stacksPromise = async () : Promise<IStacks[]>  => {
   const data = await res.json()
   return data;
 }
-stacksPromise()
+const fullStacks = stacksPromise()
 
 function App() {
   
@@ -19,7 +20,9 @@ function App() {
       
 <Nav />
 <Hero />
-<Explore />
+<Suspense fallback={<h1>Loading .....</h1>} >
+<Explore fullStacks ={fullStacks} />
+</Suspense>
 <Footer />
       
     </>
