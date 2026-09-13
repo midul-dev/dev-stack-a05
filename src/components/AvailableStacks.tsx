@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { IStacks } from "../Types/types";
 import StackCard from "./StackCard";
+import { FaXmark } from "react-icons/fa6";
 
 interface IAvailableStacksProps {
   stacks: IStacks[];
@@ -13,6 +14,14 @@ const AvailableStacks = ({
   selectedStack,
   setSelectedstack,
 }: IAvailableStacksProps) => {
+
+    const handleRemove = (stack: IStacks) => {
+        const remainStack = selectedStack.filter(
+          (selected) => selected.name !== stack.name
+        );
+        setSelectedstack(remainStack);
+    }
+
   return (
     <div className="grid grid-cols-6 gap-6 items-start">
       <div className="grid grid-cols-1 col-span-4 gap-6 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-3">
@@ -43,17 +52,19 @@ const AvailableStacks = ({
           </p>
           <div className="mt-4 space-y-2">
             {selectedStack.map((stack: IStacks) => (
-              <div
-                key={stack.id}
-                className="flex border border-[#94A3B8] rounded-xl py-2 px-6 gap-2"
-              >
-                <img src={stack.logo} alt={stack.name} className="w-[40px]" />
-                <div>
-                  <h1 className="text-sm font-medium text-slate-700">
-                    {stack.name}
-                  </h1>
-                  <p>{stack.category}</p>
+              <div className="flex justify-between items-center border border-[#94A3B8] rounded-xl py-2 px-6">
+                <div key={stack.id} className="flex  gap-2">
+                  <img src={stack.logo} alt={stack.name} className="w-[40px]" />
+                  <div>
+                    <h1 className="text-sm font-medium text-slate-700">
+                      {stack.name}
+                    </h1>
+                    <p>{stack.category}</p>
+                  </div>
                 </div>
+                <span onClick={()=>handleRemove(stack)}>
+                  <FaXmark />
+                </span>
               </div>
             ))}
           </div>

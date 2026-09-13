@@ -1,5 +1,7 @@
 import { useState } from "react";
 import type { IStacks } from "../Types/types";
+import { Bounce, toast } from "react-toastify";
+
 
 interface IStackProps {
   stack: IStacks
@@ -13,6 +15,17 @@ const StackCard = ({ stack, selectedStack, setSelectedstack }: IStackProps) => {
 const handleSelected = (selected: boolean) => {
 setIsSelected(selected)
 setSelectedstack([...selectedStack, stack])
+toast.success('Stack added susscessfully!', {
+position: "top-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
 }
 
     return (
@@ -80,7 +93,7 @@ setSelectedstack([...selectedStack, stack])
                   onClick={() => handleSelected(true)}
                   className={isSelected?`btn rounded-2xl text-white  bg-pink-500`:`btn rounded-2xl  btn-neutral`} disabled={isSelected}
                 >
-                  {isSelected === true ? "Added" : "Add to Stack"}
+                  {isSelected === true ? `✓Stack Added` : `Add to Stack`}
                 </button>
               </div>
             </div>
