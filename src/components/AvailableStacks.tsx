@@ -92,10 +92,11 @@ const AvailableStacks = ({
 
     {/* Available Stacks */}
     <div className="order-2 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:order-1 lg:col-span-4 lg:grid-cols-3">
-      {stacks.map((stack: IStacks) => (
+      {stacks.map((stack: IStacks, indx) => (
         <StackCard
           key={stack.id}
           stack={stack}
+          indx={indx}
           selectedStack={selectedStack}
           setSelectedstack={setSelectedstack}
         />
