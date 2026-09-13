@@ -2,10 +2,19 @@ import { useState } from "react";
 import type { IStacks } from "../Types/types";
 
 interface IStackProps {
-  stack: IStacks;
+  stack: IStacks
+indx: number
+selectedStack: IStacks[]
+setSelectedstack: React.Dispatch<React.SetStateAction<IStacks[]>>
 };
-const StackCard = ({ stack, indx }: IStackProps & { indx: number }) => {
+const StackCard = ({ stack, indx, selectedStack, setSelectedstack }: IStackProps) => {
     const [isSelected, setIsSelected]= useState(false)
+
+const handleSelected = (selected: boolean) => {
+setIsSelected(selected)
+setSelectedstack([...selectedStack, stack])
+}
+
     return (
         <div
             key={indx}
@@ -68,7 +77,7 @@ const StackCard = ({ stack, indx }: IStackProps & { indx: number }) => {
                   </p>
                 </div>
                 <button
-                  onClick={() => setIsSelected(true)}
+                  onClick={() => handleSelected(true)}
                   className="btn btn-neutral" disabled={isSelected}
                 >
                   {isSelected === true ? "Added" : "Add to Stack"}

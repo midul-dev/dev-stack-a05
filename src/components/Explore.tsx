@@ -7,7 +7,7 @@ interface IStackProps {
 }
 
 const Explore = ({ fullStacks }: IStackProps) => {
-    
+  const [selectedStack, setSelectedstack] = useState<IStacks[]>([]);
   const stacks = use(fullStacks);
 
   return (
@@ -23,7 +23,7 @@ const Explore = ({ fullStacks }: IStackProps) => {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
-      <AvailableStacks stacks = {stacks} />
+      <AvailableStacks stacks = {stacks} selectedStack={selectedStack} setSelectedstack={setSelectedstack} />
     </div>
   );
 };
